@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Digital - PS Group</title>
+    <!-- FontAwesome para los íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fuente Montserrat o similar -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #003366;
+            --gradient-start: #00f2fe;
+            --gradient-end: #4facfe;
+            --text-light: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            position: relative;
+            isolation: isolate;
+            background-color: #000f28;
+            color: var(--text-light);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            min-height: 100svh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background:
+                linear-gradient(rgba(0, 15, 40, 0.48), rgba(0, 15, 40, 0.62)),
+                url("./Avión%20y%20portacontenedores%20sobre%20el%20oc%C3%A9ano.png") center / cover no-repeat;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 430px;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Logo y Encabezado */
+        .logo-container {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .logo-container img {
+            display: block;
+            width: min(190px, 55vw);
+            height: auto;
+            margin: 0 auto;
+            border-radius: 12px;
+        }
+
+        .profile-info {
+            text-align: center;
+            margin-bottom: 2rem;
+            width: 100%;
+        }
+
+        .profile-info h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .role-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .line {
+            height: 1px;
+            width: 30px;
+            background-color: var(--gradient-start);
+        }
+
+        .role {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        /* Botones Principales */
+        .links-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-link {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+        }
+
+        .btn-link:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(0, 242, 254, 0.4);
+        }
+
+        .btn-link i {
+            font-size: 1.3rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .separator {
+            width: 1px;
+            height: 25px;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 0 15px;
+        }
+
+        .btn-text {
+            flex-grow: 1;
+        }
+
+        /* Redes Sociales Footer */
+        .social-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--gradient-end);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: var(--gradient-end);
+            box-shadow: 0 0 10px var(--gradient-start);
+        }
+
+        @media (max-width: 480px) {
+            body::before {
+                background-image:
+                    linear-gradient(rgba(0, 15, 40, 0.28), rgba(0, 15, 40, 0.42)),
+                    url("./Avión%20y%20portacontenedores%20sobre%20el%20oc%C3%A9ano.png");
+                background-position: center, center;
+                background-size: cover, cover;
+            }
+
+            .container {
+                padding: max(1.5rem, env(safe-area-inset-top)) 1.25rem
+                    max(2rem, env(safe-area-inset-bottom));
+            }
+
+            .profile-info {
+                margin-bottom: 1.5rem;
+            }
+
+            .profile-info h1 {
+                font-size: clamp(1.2rem, 5vw, 1.4rem);
+            }
+
+            .btn-link {
+                padding: 0.9rem 1.1rem;
+                font-size: 0.95rem;
+            }
+
+            .separator {
+                margin: 0 12px;
+            }
+
+            .social-container {
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="./logo%20-02.png" alt="PS Group - Pacific Shipping Group">
+        </div>
+
+        <div class="profile-info">
+            <h1>PS GROUP</h1>
+            <div class="role-container">
+                <div class="line"></div>
+                <span class="role">Controller</span>
+                <div class="line"></div>
+            </div>
+        </div>
+
+        <div class="links-container">
+            <a href="tel:+51902564095" class="btn-link">
+                <i class="fa-solid fa-phone"></i>
+                <div class="separator"></div>
+                <span class="btn-text">Llamar</span>
+            </a>
+            
+            <a href="https://psg-peru.com/" class="btn-link" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-globe"></i>
+                <div class="separator"></div>
+                <span class="btn-text">Sitio Web</span>
+            </a>
+
+            <a href="https://wa.me/51902564095" class="btn-link" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i>
+                <div class="separator"></div>
+                <span class="btn-text">Whatsapp</span>
+            </a>
+        </div>
+
+        <div class="social-container">
+            <a href="https://psg-peru.com/" class="social-btn" aria-label="Sitio web" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe"></i></a>
+            <a href="mailto:gianfrancoapdesign@gmail.com" class="social-btn" aria-label="Correo electrónico"><i class="fa-regular fa-envelope"></i></a>
+            <a href="https://wa.me/51902564095" class="social-btn" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/psgroup.pe/" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/psgroup.pe" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+    </div>
+
+</body>
+</html>
